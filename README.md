@@ -80,3 +80,20 @@ function keyPressed() {
 Cette partie du code s'exécute chaque fois qu'une touche du clavier est enfoncée. Si la touche "t" est pressée, une vérification supplémentaire est effectuée pour s'assurer qu'il y a au moins un véhicule (vehicules.length > 0). Si tel est le cas, une boucle forEach est utilisée pour itérer sur tous les véhicules dans le tableau vehicules. Pour chaque véhicule, une nouvelle instance de la classe Bullet est créée à partir de la position du véhicule (v.pos.x, v.pos.y) et de l'image du tir (imgFire). Cette instance de Bullet est ensuite ajoutée au tableau bullets.
 
 <img src="capture/tire.png"></img>
+<h1>Creation des enemis</h1>
+le comportement des véhicules dans une simulation en utilisant la méthode applyBehaviors() pour définir comment chaque véhicule réagit à la cible, aux obstacles et aux autres véhicules. La fonction gère également des cas spécifiques pour le premier véhicule, notamment en ajustant sa position pour éviter d'entrer dans un certain rayon autour de la cible.
+<img src="capture/enemi.png"></img>
+
+<h1>Comportement du tire sur les enemis</h1>
+Si une collision est détectée, les actions suivantes sont effectuées :
+
+La santé de l'ennemi (enemies[j].health) est décrémentée.
+Si la santé de l'ennemi atteint zéro ou moins, cela signifie que l'ennemi est tué.
+Le score est augmenté.
+L'ennemi est retiré du tableau enemies à l'indice j.
+La balle qui a touché l'ennemi est également retirée du tableau bullets à l'indice i.
+Cela se fait à l'intérieur d'une boucle for qui parcourt les balles de la fin au début (bullets.length - 1) pour éviter des problèmes liés à la suppression d'éléments d'un tableau pendant que vous le parcourez.
+
+En résumé, lorsqu'une balle touche un ennemi, la santé de l'ennemi est réduite, et si sa santé atteint zéro, l'ennemi est tué, ce qui entraîne l'augmentation du score et la suppression de l'ennemi et de la balle associée des tableaux respectifs.
+<img src="capture/tire_sur_enemi.png"></img>
+
