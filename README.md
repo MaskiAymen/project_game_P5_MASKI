@@ -56,7 +56,7 @@ Les positions x et y sont ensuite contraintes pour garantir que le véhicule res
 <h1>Comportement du snack</h1>
 le comportement des véhicules dans une simulation en utilisant la méthode applyBehaviors() pour définir comment chaque véhicule réagit à la cible, aux obstacles et aux autres véhicules. La fonction gère également des cas spécifiques pour le premier véhicule, notamment en ajustant sa position pour éviter d'entrer dans un certain rayon autour de la cible.
 
-<img src="capture/snack.png"></img>
+<img src="capture/snacke.png"></img>
 
 <h1>Comportement du tire</h1>
 
