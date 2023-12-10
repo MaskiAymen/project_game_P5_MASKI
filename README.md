@@ -1,6 +1,12 @@
 # project_game_P5_MASKI
 P5 game created
 <h2>Fonctionnalitées developées</h2>
+leader
+wander
+Snack
+tire avec audio
+tuer les enemis
+
 <h1>Comportement du leader</h1>
 Logique pour le leader:
 
