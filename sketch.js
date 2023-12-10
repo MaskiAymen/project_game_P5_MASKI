@@ -10,12 +10,14 @@ let vehicules = [];
 let demo = "snake";
 let imgVaisseau;
 let targetRadius = 100; // Rayon du cercle blanc
-
+let shotSound;
 function preload() {
   console.log("preload");
   imgVaisseau = loadImage('assets/images/vaisseau.png');
   imgEnemi = loadImage('assets/images/enemi.png');
   imgFire = loadImage('assets/images/fire.png'); // Chargement de la nouvelle image
+
+  shotSound = loadSound('assets/audio/tire.mp3');
 }
 
 function setup() {
@@ -262,33 +264,40 @@ function keyPressed() {
   if (key == "f") {
     for (let i = 0; i < 10; i++) {
       let v = new Vehicle(random(10, 20), random(height / 2 - 10, height / 2 + 10), imgVaisseau)
-      v.maxSpeed = 9;
+      v.maxSpeed = 10;
       v.color = "purple";
       vehicules.push(v);
     }
   }
-  if (key == "s") {
+  if (key == "s" || key == "S") {
     demo = "snake";
   }
-  if (key == 'l') {
+  if (key == 'l'|| key == "L") {
     demo = "leader";
   }
-  if (key == 'w') {
+  if (key == 'w'|| key == "W") {
     demo = "wander";
   }
-  if (key == "e") {
+  if (key == "e"|| key == "E") {
     let enemy = new Enemy(random(width), random(height), imgEnemi);
     enemies.push(enemy);
   }
-  if (key == "t") {
+  if (key == "t" || key == "T") {
     // Logique de tir
     if (vehicules.length > 0) {
       vehicules.forEach(v => {
         let bullet = new Bullet(v.pos.x, v.pos.y, imgFire);
         bullets.push(bullet);
       });
+  
+      // Jouer le son de tir (une seule fois pour tous les véhicules)
+      shotSound.setVolume(0.5);
+      shotSound.play();
+      shotSound.playbackRate(1.5);
     }
   }
+  
+  
   
 
 }
