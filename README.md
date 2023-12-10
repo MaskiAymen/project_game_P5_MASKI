@@ -87,7 +87,12 @@ Cette partie du code s'exécute chaque fois qu'une touche du clavier est enfonc�
 
 <img src="capture/tire.png"></img>
 <h1>Creation des enemis</h1>
-le comportement des véhicules dans une simulation en utilisant la méthode applyBehaviors() pour définir comment chaque véhicule réagit à la cible, aux obstacles et aux autres véhicules. La fonction gère également des cas spécifiques pour le premier véhicule, notamment en ajustant sa position pour éviter d'entrer dans un certain rayon autour de la cible.
+Lorsque la touche "e" est pressée, une nouvelle instance de la classe Enemy est créée avec une position aléatoire (random(width), random(height)) et l'image de l'ennemi (imgEnemi).
+Ensuite, cette instance nouvellement créée est ajoutée au tableau enemies à l'aide de la méthode push().
+La classe Enemy a été définie plus tôt dans votre code et elle contient des informations sur la position, la vitesse, le rayon, l'image de l'ennemi, et la barre de vie.
+
+Chaque fois que vous appuyez sur la touche "e", un nouvel ennemi est créé et ajouté au tableau enemies. Ces ennemis sont ensuite mis à jour et affichés dans la boucle draw(). La logique de la barre de vie est également prise en compte lors de l'affichage de chaque ennemi.
+
 <img src="capture/enemi.png"></img>
 
 <h1>Comportement du tire sur les enemis</h1>
